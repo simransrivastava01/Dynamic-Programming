@@ -1,4 +1,4 @@
-/* Subset Sum Problem (Bottom-Up) */
+/* Count Subset Problem (Bottom-Up) */
 
 import java.util.*;
 
