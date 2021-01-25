@@ -1,9 +1,9 @@
-/* Subset Sum Problem (Top-Down) */
+/* Count Subset Problem (Top-Down) */
 
 import java.util.*;
 
 class GFG {
-    public static boolean isSubsetSum(int arr[], int n, int sum)
+    public static boolean CountSubset(int arr[], int n, int sum)
     {
         boolean dp[][] = new boolean[n+1][sum+1];
         
@@ -23,7 +23,7 @@ class GFG {
             {
                 if(arr[i-1]<=j)
                 {
-                    dp[i][j] = dp[i-1][j-arr[i-1]] || dp[i-1][j];
+                    dp[i][j] = dp[i-1][j-arr[i-1]] + dp[i-1][j];
                 }
                 else
                 {
@@ -43,6 +43,6 @@ class GFG {
 	   }
 	   int sum=obj.nextInt();
 	   
-	   System.out.print(isSubsetSum(arr,n,sum));
+	   System.out.print(CountSubset(arr,n,sum));
 	}
 }
