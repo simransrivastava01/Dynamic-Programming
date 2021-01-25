@@ -3,7 +3,7 @@
 import java.util.*;
 
 class GFG {
-    public static boolean isSubsetSum(int arr[], int n, int sum)
+    public static boolean CountSubset(int arr[], int n, int sum)
     {
         if(n==0)
           return false;
@@ -20,11 +20,11 @@ class GFG {
         
         if(arr[n-1]<=sum)
           {
-            dp[n][sum] = isSubsetSum(arr,n-1,sum-arr[n-1]) || isSubsetSum(arr,n-1,sum);
+            dp[n][sum] = CountSubset(arr,n-1,sum-arr[n-1]) + CountSubset(arr,n-1,sum);
           }
         else
           {
-            dp[n][sum] = isSubsetSum(arr,n-1,sum);
+            dp[n][sum] = CountSubset(arr,n-1,sum);
           }
         return dp[n][sum];
     }
@@ -38,6 +38,6 @@ class GFG {
 	   }
 	   int sum=obj.nextInt();
 	   
-	   System.out.print(isSubsetSum(arr,n,sum));
+	   System.out.print(CountSubset(arr,n,sum));
 	}
 }
